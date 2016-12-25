@@ -10,11 +10,6 @@ var PromptContainer = React.createClass({
 			username: ''
 		}
 	},
-	handleUpdateUser: function(e){
-		this.setState({
-			username: e.target.value
-		});
-	},
 	handleSubmitUser: function(e){
 		e.preventDefault();
 		var username = this.state.username;
@@ -28,13 +23,18 @@ var PromptContainer = React.createClass({
 				pathname: '/battle',
 				query: {
 					playerOne: this.props.routeParams.playerOne,
-					playerTwo: this.props.username
+					playerTwo: this.state.username
 				}
 			})
 		} else {
 			//go to /playerTwo
 			this.context.router.push('/playerTwo/' + this.state.username)
 		}
+	},
+	handleUpdateUser: function(event){
+		this.setState({
+			username: event.target.value
+		});
 	},
 	render: function(){
 		return (
