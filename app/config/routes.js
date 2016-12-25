@@ -11,7 +11,7 @@ var ConfirmBattleContainer = require('../containers/ConfirmBattleContainer');
 var ResultsContainer = require('../containers/ResultsContainer');
 
 var routes = (
-	<Router  history={hashHistory}>
+    <Router  history={hashHistory}>
 		<Route path='/' component={Main}>
 			<IndexRoute component={Home} />
 			<Route path='playerOne' header='Player One' component={PromptContainer} />
